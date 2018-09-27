@@ -7,6 +7,7 @@
         <meta name="author" content="">
         <link rel="icon" href="https://getbootstrap.com/favicon.ico">
         <title>Update orders</title>
+
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -16,17 +17,14 @@
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
                 <div class="inner">
+                    <h3 class="masthead-brand">My Restaurant</h3>
                     <h3 class="masthead-brand">Update Orders</h3>
+                    <a class="btn btn-lg btn-secondary" href="/index.html">Back </a>
 
-                    <!--<nav class="nav nav-masthead justify-content-center">-->
-                    <!--<a class="nav-link active" href="#" onClick="OrdersControllerModule.showOrdersByTable()">Orders</a>-->
-                    <!--<a class="nav-link" href="#" onClick="addOrder()">New Order</a>
-                    <a class="nav-link" href="#" onClick="removeOrderById(2)">Delete Order</a>-->
-                    <!--</nav>-->
                 </div>
 
             </header>
-
+            <img src="https://www.reporterosonline.com/images/restaurante-wyndham-steak-house.jpg" class="img-fluid" alt="Responsive image">
             <div class="row">
                 <div>
                     <select id="orders" onchange="OrdersControllerModule.showSelectedOrder()" ></select>
@@ -34,12 +32,12 @@
 
                 <form>
                     <input id="name" type="text" name="Item Name" placeholder="Item Name"><br>
-              <input id="quantity" type="text" name="Quantity" placeholder="Quantity">
+                    <input id="quantity" type="text" name="Quantity" placeholder="Quantity">
                 </form>
 
-                <button type="button" class="btn" onclick="OrdersControllerModule.addItemToOrder($('#orders').val(),[$('#name').val(), $('#quantity').val()])">Add</button>
+                <button type="button" class="btn" onclick="OrdersControllerModule.addItemToOrder($('#orders').val(), [$('#name').val(), $('#quantity').val()])">Add</button>
             </div>
-            
+
             <table id="actualOrder" class="table table-dark">
 
             </table>

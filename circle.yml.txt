@@ -5,4 +5,4 @@ machine:
   staging:
     branch: master
     heroku: 
-      appname: apirest3365
+      appname: apirest3365-2

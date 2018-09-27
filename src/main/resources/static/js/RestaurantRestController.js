@@ -41,7 +41,7 @@ var RestControllerModule = (function () {
     };
 
     var createOrder = function (order, callback) {
-        // todo implement
+        
     };
 
     return {
