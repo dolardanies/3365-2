@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -16,7 +16,7 @@
         <link href="./css/cover.css" rel="stylesheet">
     </head>
 
-    <body class="text-center" onload="loadOrdersList()">
+    <body class="text-center" onload="OrdersControllerModule.showOrdersByTable()">
 
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
@@ -27,7 +27,7 @@
             <img src="https://www.reporterosonline.com/images/restaurante-wyndham-steak-house.jpg" class="img-fluid" alt="Responsive image">
             <p class="lead">
 
-                <a class="btn btn-lg btn-secondary" href="#" onclick="loadOrdersList()">Lista</a>
+                <a class="btn btn-lg btn-secondary" href="#" onclick="OrdersControllerModule.showOrdersByTable()">Lista</a>
                 <a class="btn btn-lg btn-secondary" href="#" onclick="addOrder()">Nueva </a>
                 <a class="btn btn-lg btn-secondary" href="#" onclick="removeOrderById(2)">Eliminar</a>
             </p>
@@ -56,6 +56,6 @@
         <script src="./js/bootstrap.js"></script>
         <script src="./js/OrdersController.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+        <script src="./js/RestaurantRestController.js"></script>
 
     </body></html>
