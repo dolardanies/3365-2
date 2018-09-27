@@ -29,4 +29,5 @@ public interface RestaurantOrderServices {
 
     void releaseTable(int tableNumber) throws OrderServicesException;
     
+    void updateOrder(Order order) throws OrderServicesException;
 }

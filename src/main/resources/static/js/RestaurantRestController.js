@@ -21,23 +21,23 @@ var RestControllerModule = (function () {
     }
 
     var updateOrder = function (order, callback) {
-        axios.put('/orders/'+actual,order)
-            .then(function(){
-                callback.onSuccess();
-            })
-            .catch(function(reason){
-                callback.onFailed(reason);
-            });
+        axios.put('/orders/' + order.tableNumber, order)
+                .then(function () {
+                    callback.onSuccess();
+                })
+                .catch(function (reason) {
+                    callback.onFailed(reason);
+                });
     };
 
     var deleteOrder = function (orderId, callback) {
-        axios.delete('/orders/'+orderId)
-            .then(function(){
-                callback.onSuccess();
-            })
-            .catch(function(reason){
-                callback.onFailed(reason);
-            });
+        axios.delete('/orders/' + orderId)
+                .then(function () {
+                    callback.onSuccess();
+                })
+                .catch(function (reason) {
+                    callback.onFailed(reason);
+                });
     };
 
     var createOrder = function (order, callback) {

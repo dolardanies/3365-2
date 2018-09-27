@@ -111,7 +111,7 @@ public class OrdersAPIController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "{idTable}")
+    /*@RequestMapping(method = RequestMethod.PUT, path = "{idTable}")
     public ResponseEntity<?> updateOrder(@PathVariable String idTable, @RequestBody String plato) {
         Type listType = new TypeToken<Map<String, String>>() {}.getType();
         Map<String, String> listaord = g.fromJson(plato, listType);
@@ -125,9 +125,21 @@ public class OrdersAPIController {
         }
         return new ResponseEntity<>(HttpStatus.OK);
 
+    }*/
+    
+    @RequestMapping(method = RequestMethod.PUT, path = "{idTable}")
+    public ResponseEntity<?> modifyOrder(@PathVariable int idTable, @RequestBody Order order){
+        try{
+            services.updateOrder(order);
+        } catch(OrderServicesException e){
+            Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null,e);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
+    
     @RequestMapping(method = RequestMethod.DELETE, path = "{idTable}")
-    public ResponseEntity<?> deleteOrder(@PathVariable String idTable){
+    public ResponseEntity<?> deleteOrder(@PathVariable String idTable) {
         try {
             services.releaseTable(Integer.parseInt(idTable));
             return new ResponseEntity<>(HttpStatus.OK);
@@ -136,7 +148,5 @@ public class OrdersAPIController {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
-
-    
 
 }

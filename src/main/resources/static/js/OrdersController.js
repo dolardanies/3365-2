@@ -56,6 +56,23 @@
  }*/
 
 var OrdersControllerModule = (function () {
+    
+    var selectedOrder;
+    /* var getActualOrder = function () {
+        var s = document.getElementById("orders");
+        var selected = s.options[s.selectedIndex].value;
+        var callback = {
+            onSuccess: function (orden) {
+                return orden;
+            },
+            onFailed: function (error) {
+                console.log(error);
+                errorMessage();
+            }
+        }
+        RestControllerModule.getOrderById(selected, callback);
+    }*/
+    
     var errorMessage = function () {
         alert("Hay un problema con nuestros servidores. Pedimos disculpas por la inconveniencia, intente de nuevo más tarde");
     }
@@ -92,7 +109,17 @@ var OrdersControllerModule = (function () {
     };
 
     var addItemToOrder = function (orderId, item) {
-        // todo implement
+        selectedOrder[orderId].orderAmountsMap[item[0]] = parseInt(item[1]);
+        var callback = {
+            onSuccess: function () {
+                showSelectedOrder();
+            },
+            onFailed: function (reason) {
+                console.log(reason);
+                errorMessage();
+            }
+        }
+        RestControllerModule.updateOrder(selectedOrder[orderId],callback);
     };
     
     var loadSelectOrdersData = function (){
@@ -114,10 +141,10 @@ var OrdersControllerModule = (function () {
     var showSelectedOrder = function(){
         var s = document.getElementById("orders");
         var selected = s.options[s.selectedIndex].value;
-        console.log(selected);
+        
         var callback = {
             onSuccess: function(order){
-                console.log(order);
+                selectedOrder = order;
                 $("#actualOrder").empty();
                 $("#actualOrder").append("<thead> <tr>  <th scope='col'>Item</th> <th scope='col'>Quantity</th> <th scope='col'></th> <th scope='col'></th>  </tr> </thead>");
                 for(dish in order[selected].orderAmountsMap){

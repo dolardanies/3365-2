@@ -33,11 +33,11 @@
                 </div>
 
                 <form>
-                    <input type="text" name="Item Name" placeholder="Item Name"><br>
-                    <input type="text" name="Quantity" placeholder="Quantity">
+                    <input id="name" type="text" name="Item Name" placeholder="Item Name"><br>
+              <input id="quantity" type="text" name="Quantity" placeholder="Quantity">
                 </form>
 
-                <button type="button" class="btn">Add</button>
+                <button type="button" class="btn" onclick="OrdersControllerModule.addItemToOrder($('select[id = orders]').val(),[$('input[id = name]').val(), $('input[id = quantity]').val()])">Add</button>
             </div>
             
             <table id="actualOrder" class="table table-dark">

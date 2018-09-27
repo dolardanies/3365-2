@@ -77,6 +77,17 @@ public class RestaurantOrderServicesStub implements RestaurantOrderServices {
         return calc.calculateBill(tableOrders.get(tableNumber), productsMap);
 
     }
+    
+    @Override
+    public void updateOrder(Order order) throws OrderServicesException{
+        if (!tableOrders.keySet().contains((Integer)order.getTableNumber())) throw new OrderServicesException("Mesa inexistente o ya liberada" + order.getTableNumber());
+        for(Integer i: tableOrders.keySet()){
+            if(i == order.getTableNumber()){
+                tableOrders.get(i).setOrderAmountsMap(order.getOrderAmountsMap());
+                break;
+            }
+        }
+    }
 
     private static final Map<String, RestaurantProduct> productsMap;
 
