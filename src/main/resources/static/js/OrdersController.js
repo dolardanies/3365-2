@@ -20,7 +20,7 @@ var OrdersControllerModule = (function () {
                     for (map in ordersList[key].orderAmountsMap) {
                         $("#Table" + key).append("<tbody> <tr> <td>" + map + "</td> <td>" + orders[key].orderAmountsMap[map] + "</td> </tr> </tbody>");
                     }
-                    //$("#actualT").append("</table>");
+                    $("#actualT").append("</table>");
                 }
 
             },
