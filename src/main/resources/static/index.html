@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+        <title>Lab 3</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="./css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="./css/cover.css" rel="stylesheet">
+    </head>
+
+    <body class="text-center" onload="loadOrdersList()">
+
+        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Mi restaurante</h3>
+                </div>
+            </header>
+            <img src="https://www.reporterosonline.com/images/restaurante-wyndham-steak-house.jpg" class="img-fluid" alt="Responsive image">
+            <p class="lead">
+
+                <a class="btn btn-lg btn-secondary" href="#" onclick="loadOrdersList()">Lista</a>
+                <a class="btn btn-lg btn-secondary" href="#" onclick="addOrder()">Nueva </a>
+                <a class="btn btn-lg btn-secondary" href="#" onclick="removeOrderById(2)">Eliminar</a>
+            </p>
+
+
+            <main role="main" class="inner cover" id="actualT">
+
+
+            </main>
+
+
+            <footer class="mastfoot mt-auto">
+                <div class="inner">
+                    <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                </div>
+            </footer>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="./js/jquery-3.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="./js/popper.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script src="./js/OrdersController.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    </body></html>
