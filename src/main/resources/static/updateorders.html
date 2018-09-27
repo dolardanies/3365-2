@@ -37,7 +37,7 @@
               <input id="quantity" type="text" name="Quantity" placeholder="Quantity">
                 </form>
 
-                <button type="button" class="btn" onclick="OrdersControllerModule.addItemToOrder($('select[id = orders]').val(),[$('input[id = name]').val(), $('input[id = quantity]').val()])">Add</button>
+                <button type="button" class="btn" onclick="OrdersControllerModule.addItemToOrder($('#orders').val(),[$('#name').val(), $('#quantity').val()])">Add</button>
             </div>
             
             <table id="actualOrder" class="table table-dark">
